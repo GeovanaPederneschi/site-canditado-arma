@@ -9,12 +9,13 @@ const tags = ['Legítima defesa', 'Direitos dos CACs', 'Segurança pública', 'V
 
 export default function QuemE() {
   return (
-    <section id="quem-e" className="py-20 lg:py-28 bg-[#0F1115]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+    <section id="quem-e" className="relative py-20 lg:py-28 bg-[#0F1115] overflow-hidden">
+      <div className="scanlines" />
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
         <div className="flex items-center gap-3 mb-4">
           <span className="w-10 h-0.5 bg-[#B91C1C]" />
-          <span className="text-[#B91C1C] text-xs font-bold uppercase tracking-widest">
-            Conheça o candidato
+          <span className="font-mono text-[#4ADE80] text-xs uppercase tracking-widest">
+            Ficha // Conheça o candidato
           </span>
         </div>
 
@@ -63,22 +64,29 @@ export default function QuemE() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="col-span-2 bg-[#22262E] border border-[#4A5568]/30 p-8">
-              <p className="font-display text-white text-xl leading-relaxed tracking-wide">
-                "QUEM RESPEITA A LEI TEM DIREITO DE SE DEFENDER. ESSA É A PAUTA
-                QUE VOU LEVAR PRA ASSEMBLEIA."
-              </p>
-              <p className="text-white/40 text-sm mt-4">— Marcos Teixeira</p>
+          <div className="hud-frame bg-[#22262E] border border-[#4A5568]/30 p-2" style={{ '--hud-color': '#4ADE80' }}>
+            <span className="hud-corner-tr" />
+            <span className="hud-corner-bl" />
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-[#4A5568]/30 font-mono text-[10px] text-[#4ADE80]/70 uppercase tracking-widest">
+              Ficha 001 — Marcos Teixeira
             </div>
-            {stats.map((s) => (
-              <div key={s.label} className="bg-[#22262E] border border-[#4A5568]/30 p-6 hover:border-[#B91C1C]/50 transition-colors">
-                <p className="font-display text-4xl text-[#B91C1C] leading-none tracking-wide">
-                  {s.value}
+            <div className="grid grid-cols-2 gap-3 p-3">
+              <div className="col-span-2 bg-[#16181D] p-6">
+                <p className="font-display text-white text-xl leading-relaxed tracking-wide">
+                  "QUEM RESPEITA A LEI TEM DIREITO DE SE DEFENDER. ESSA É A PAUTA
+                  QUE VOU LEVAR PRA ASSEMBLEIA."
                 </p>
-                <p className="text-white/50 text-xs mt-2 leading-tight">{s.label}</p>
+                <p className="text-white/40 text-sm mt-4">— Marcos Teixeira</p>
               </div>
-            ))}
+              {stats.map((s) => (
+                <div key={s.label} className="bg-[#16181D] p-6 hover:bg-[#1a1e26] transition-colors">
+                  <p className="font-display text-4xl text-[#B91C1C] leading-none tracking-wide">
+                    {s.value}
+                  </p>
+                  <p className="text-white/50 text-xs mt-2 leading-tight font-mono">{s.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -44,8 +44,9 @@ export default function Formulario() {
   }
 
   return (
-    <section id="cadastro" className="py-20 lg:py-28 bg-[#16181D]">
-      <div className="max-w-3xl mx-auto px-6 sm:px-12">
+    <section id="cadastro" className="relative py-20 lg:py-28 bg-[#16181D] overflow-hidden">
+      <div className="scanlines" />
+      <div className="relative max-w-3xl mx-auto px-6 sm:px-12">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="w-8 h-0.5 bg-[#B91C1C]" />

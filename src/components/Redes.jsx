@@ -15,8 +15,9 @@ const redes = [
 
 export default function Redes() {
   return (
-    <section id="redes" className="py-20 lg:py-28 bg-[#0F1115]">
-      <div className="max-w-5xl mx-auto px-6 sm:px-12 lg:px-20">
+    <section id="redes" className="relative py-20 lg:py-28 bg-[#0F1115] overflow-hidden">
+      <div className="scanlines" />
+      <div className="relative max-w-5xl mx-auto px-6 sm:px-12 lg:px-20">
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="w-8 h-0.5 bg-[#B91C1C]" />

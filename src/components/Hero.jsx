@@ -1,28 +1,40 @@
-import CandidatoAvatar from './CandidatoAvatar'
+import Radar from './Radar'
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative bg-[#16181D] overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
-      {/* Diagonal steel accent */}
-      <div
-        className="absolute top-0 right-0 w-1/2 h-full bg-[#22262E] hidden lg:block"
-        style={{ clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)' }}
-      />
-      <div className="absolute top-0 left-0 w-full h-1.5 bg-[#B91C1C]" />
+    <section id="inicio" className="relative bg-[#0c0d10] overflow-hidden pt-28 pb-20 lg:pt-32 min-h-screen flex items-center">
+      <div className="scanlines" />
+      <div className="scan-sweep" />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+      {/* Background grid */}
+      <div
+        className="absolute inset-0 opacity-[0.06] pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(#4ADE80 1px, transparent 1px), linear-gradient(90deg, #4ADE80 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 grid lg:grid-cols-[1fr_0.9fr] gap-14 items-center w-full">
         {/* Text */}
         <div>
-          <span className="inline-flex items-center gap-2 border border-[#B91C1C]/50 px-4 py-1.5 text-xs font-bold text-[#B91C1C] uppercase tracking-widest mb-6">
-            Candidato a Deputado Estadual
-          </span>
+          <div className="hud-frame inline-block px-4 py-1.5 mb-6" style={{ '--hud-color': '#4ADE80' }}>
+            <span className="hud-corner-tr" />
+            <span className="hud-corner-bl" />
+            <span className="font-mono text-xs text-[#4ADE80] tracking-widest">
+              STATUS: CANDIDATO ATIVO // DEP. ESTADUAL
+            </span>
+          </div>
 
           <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl leading-[0.95] text-white mb-6 tracking-wide">
             MARCOS<br />
             <span className="text-[#B91C1C]">TEIXEIRA</span>
           </h1>
 
-          <p className="text-xl text-white/60 mb-4 uppercase tracking-wide font-display">Segurança não se negocia.</p>
+          <p className="font-mono text-[#4ADE80] text-sm mb-4 tracking-wide">
+            &gt; SEGURANÇA NÃO SE NEGOCIA_
+          </p>
 
           <p className="text-white/50 leading-relaxed mb-10 max-w-md">
             Ex-policial militar e instrutor de tiro esportivo, Marcos leva 20
@@ -41,33 +53,31 @@ export default function Hero() {
               href="#propostas"
               className="border-2 border-[#4A5568] text-white px-8 py-4 font-bold text-sm hover:bg-white/5 transition-colors duration-200 uppercase tracking-wide"
             >
-              Conheça as propostas
+              Ver dossiê de propostas
             </a>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="h-11 px-3 bg-[#22262E] border border-[#4A5568] text-white flex items-center justify-center font-black text-sm">
+          <div className="flex items-center gap-3 font-mono">
+            <div className="h-11 px-3 bg-[#22262E] border border-[#4ADE80]/40 text-[#4ADE80] flex items-center justify-center font-bold text-sm">
               1911
             </div>
             <div>
-              <p className="text-[10px] text-white/40 uppercase tracking-widest font-medium">
-                Número do candidato
+              <p className="text-[10px] text-white/40 uppercase tracking-widest">
+                Código do candidato
               </p>
               <p className="text-sm font-semibold text-white/80">1911 — PDS</p>
             </div>
           </div>
         </div>
 
-        {/* Avatar */}
+        {/* Radar */}
         <div className="relative flex justify-center lg:justify-end">
-          <div className="relative w-64 sm:w-80">
-            <div className="absolute inset-0 bg-[#B91C1C]/10 scale-105" style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }} />
-            <div className="relative overflow-hidden shadow-2xl border-4 border-[#4A5568]" style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}>
-              <CandidatoAvatar className="w-full h-auto" />
-            </div>
-            <div className="absolute -bottom-4 -left-6 bg-[#22262E] border border-[#4A5568] px-5 py-3 shadow-lg">
-              <p className="text-xs text-white/40">Partido</p>
-              <p className="font-display text-white text-lg tracking-wide">PDS</p>
+          <div className="w-64 sm:w-80 lg:w-96 relative">
+            <Radar className="w-full" />
+            <div className="absolute -bottom-4 -left-4 hud-frame bg-[#0c0d10]/80 px-3 py-2" style={{ '--hud-color': '#4ADE80' }}>
+              <span className="hud-corner-tr" />
+              <span className="hud-corner-bl" />
+              <p className="font-mono text-[10px] text-[#4ADE80]">RADAR // SEGURANÇA PÚBLICA</p>
             </div>
           </div>
         </div>
